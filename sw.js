@@ -1,0 +1,5 @@
+const C='suzana-v1',F=['./', 'index.html', 'manifest.webmanifest', 'gate.js', 'prontuario.html', 'respirar.html', 'ancora.html', 'conteudo.html', 'area.html', 'estudio.html', 'contatos.html', '404.html', 'foto.jpg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>Promise.all(F.map(u=>c.add(u).catch(()=>{})))));self.skipWaiting()});
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+function net(r){return new Promise((ok,no)=>{const t=setTimeout(no,4000);fetch(r).then(x=>{clearTimeout(t);ok(x)},e=>{clearTimeout(t);no(e)})})}
+self.addEventListener('fetch',e=>{const q=e.request;if(q.method!=='GET'||new URL(q.url).origin!==location.origin)return;e.respondWith(net(q).then(r=>{if(r.ok){const x=r.clone();caches.open(C).then(c=>c.put(q,x))}return r}).catch(()=>caches.match(q,{ignoreSearch:true}).then(r=>r||(q.mode==='navigate'?caches.match('index.html'):Response.error()))))});

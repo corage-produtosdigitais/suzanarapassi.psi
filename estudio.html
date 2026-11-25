@@ -1,0 +1,72 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Estúdio de posts · Suzana Rapassi</title><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><meta name="theme-color" content="#5A3A28"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Suzana Rapassi"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{--c:#A9603C;--c2:#F7E6CF;--bg:#FBF6EE;--ink:#3A2A22;--soft:#7A6A60;--line:#E8DAC8;--deep:#5A3A28}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:560px;margin:0 auto;padding:22px 18px 40px;min-height:100vh;display:flex;flex-direction:column}
+h1{font:italic 400 30px/1.2 Georgia,serif;margin:10px 0 12px;color:var(--deep)}
+h2{font:400 21px/1.3 Georgia,serif;margin:18px 0 10px;color:var(--deep)}
+p{margin:0 0 14px}.sub{color:var(--soft)}
+.top{font:italic 17px Georgia,serif;color:var(--deep);text-align:center;margin:0 0 6px}
+.btn{display:block;width:100%;min-height:58px;border-radius:16px;border:0;background:var(--c);color:#fff;font-weight:500;font-size:18px;font-family:inherit;cursor:pointer;margin-top:10px;text-align:center;text-decoration:none;padding:16px}
+.btn.sec{background:#fff;color:var(--c);border:1.5px solid var(--c)}
+.btn.ghost{background:transparent;color:var(--soft);border:0;min-height:44px;font-weight:600;font-size:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin:0 0 16px}
+.card b{color:var(--deep)}b,strong{font-weight:500}
+input,select,textarea{width:100%;font:inherit;font-size:19px;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);margin:0 0 12px}
+label{display:block;font-weight:500;margin:0 0 6px}
+.aviso{font-size:15px;color:var(--soft);margin-top:14px}
+.back{display:inline-block;color:var(--soft);font-size:17px;padding:8px 0;text-decoration:none}
+footer{margin-top:auto;padding-top:24px;text-align:center;font-size:15px;color:var(--soft)}
+.opt{display:block;width:100%;text-align:left;min-height:60px;padding:14px 16px;margin:0 0 12px;border-radius:16px;border:2px solid var(--line);background:#fff;font:inherit;color:inherit;cursor:pointer}
+.opt.on{border-color:var(--c);background:var(--c2)}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin:0 0 20px}.bar i{display:block;height:100%;background:var(--c);transition:width .25s}
+details{margin:0 0 10px}summary{font-weight:500;color:var(--deep);cursor:pointer;padding:10px 0;font-size:19px}ol{margin:6px 0 4px;padding-left:24px}li{margin:0 0 8px}
+.foto{display:block;width:120px;height:120px;border-radius:50%;object-fit:cover;margin:6px auto 12px;border:4px solid #fff;box-shadow:0 2px 10px rgba(90,58,40,.18)}.mono{width:104px;height:104px;border-radius:50%;background:var(--c);color:#FBF1E2;font:italic 400 56px/104px Georgia,serif;text-align:center;margin:6px auto 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.chip{padding:10px 16px;border-radius:99px;border:2px solid var(--line);background:#fff;font:inherit;font-size:17px;cursor:pointer}.chip.on{border-color:var(--c);background:var(--c2)}
+.circ{width:190px;height:190px;border-radius:50%;background:var(--c2);border:2px solid var(--c);margin:26px auto;display:flex;align-items:center;justify-content:center;text-align:center;font:italic 400 24px Georgia,serif;color:var(--deep);transition:transform 4s ease-in-out}
+.entry{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:0 0 10px}.entry small{color:var(--soft)}</style></head><body><script src="gate.js"></script><main><style>canvas{width:100%;height:auto;border-radius:14px;border:2px solid var(--line);background:#fff;display:block}.cores{display:flex;gap:10px;margin:0 0 14px}.cor{flex:1;height:56px;border-radius:14px;border:3px solid transparent;cursor:pointer}.cor.on{border-color:var(--ink)}.fmt{display:flex;gap:10px;margin:0 0 6px}.fmt button{flex:1;min-height:54px;border-radius:14px;border:2px solid var(--line);background:#fff;font:inherit;font-size:18px;cursor:pointer}.fmt button.on{border-color:var(--c);background:var(--c2);font-weight:600}details.d{background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 16px;margin:0 0 12px}</style><a class="back" href="area.html">← Voltar à Área da Dra. Suzana</a><p class="top">Estúdio de posts · Suzana Rapassi</p><h1>Crie o seu post em 3 toques</h1><a class="btn" href="conteudo.html" style="margin:0 0 10px">Calendário e roteiros de post (IAsmin)</a><a class="btn sec" href="contatos.html" style="margin:0 0 16px">Meus contatos</a><h2>1. Formato</h2><div class="fmt"><button id="fp" class="on">Post</button><button id="fs">Story</button></div><h2>2. Frase</h2><select id="fr"></select><label for="tx" style="margin-top:6px">Ou escreva a sua:</label><textarea id="tx" rows="2" placeholder="Escreva aqui (opcional)"></textarea><h2>3. Cor</h2><div class="cores" id="cores"></div><canvas id="cv"></canvas><button class="btn" id="bx">Baixar a imagem</button><button class="btn sec" id="sh">Compartilhar</button><h2>Legenda pronta</h2><div class="card"><p id="lg" style="white-space:pre-wrap;margin:0 0 6px"></p></div><button class="btn sec" id="cp">Copiar a legenda</button><h2>Ideias</h2><details class="d"><summary>7 ideias de stories para a semana</summary><ol style="padding-left:22px;margin:12px 0 0"><li>Segunda: pergunte "como você está chegando nessa semana?" com enquete.</li><li>Terça: um mito sobre terapia, em "mito ou verdade?".</li><li>Quarta: respiração de 1 minuto, convidando para fazer junto.</li><li>Quinta: bastidores do seu dia (sem dados de paciente).</li><li>Sexta: uma pergunta de autoconhecimento na caixinha.</li><li>Sábado: indicação de livro ou música que acalma.</li><li>Domingo: uma frase de recomeço e o convite para o atendimento.</li></ol></details><p class="aviso">Lembre: não divulgue depoimentos nem dados de pacientes e não prometa resultado. Confira as regras de publicidade do Conselho Federal de Psicologia.</p><footer>Corage produtos digitais, direitos reservados.<br>Desenvolvido por @eve.imagememarca<br>Suzana Rapassi · Psicóloga e Neuropsicóloga</footer></main><script>(function(){
+var HANDLE="@psi.suzanarapassi";
+var F=[
+["Descansar também é cuidar de si.","Pausa não é preguiça, é parte do cuidado. Hoje, o que você pode largar por 10 minutos? 🧡"],
+["Você não precisa dar conta de tudo.","Pedir ajuda também é uma forma de força. Salve para lembrar."],
+["Sentir não é fraqueza. É informação.","Dar nome ao que você sente já é um primeiro passo. Como você está hoje?"],
+["Voltar para si é um caminho, não uma meta.","Um passo pequeno por dia já conta. Qual é o seu de hoje?"],
+["Seu tempo também importa.","Reservar um momento só seu não é egoísmo. É o que sustenta o resto."],
+["Respire. Você está fazendo o que dá.","Se hoje foi pesado, tudo bem. Respire fundo três vezes e siga no seu ritmo."],
+["Cuidar da mente é cuidar da vida inteira.","Cuidado com a mente, com ciência e com gente. Conte comigo nessa caminhada."],
+["Você merece falar e ser escutada.","Ter com quem conversar muda o caminho. Terapia é um espaço seu."],
+["Autocuidado não é luxo.","É o que te mantém inteira para o que importa. Comece pequeno."],
+["Recomeçar também faz parte.","Teve um dia difícil? Amanhã é outra chance, sem se cobrar."]];
+var TAGS="#psicologia #avaliacaoneuropsicologica #saudemental #autocuidado #psicologiaonline #neuropsicologia";
+var CTA="Quer conversar sobre o seu momento? Chame no WhatsApp (link na bio). 💬";
+var CORES=[{n:"Marrom",bg:"#5A3A28",bg2:"#432A1C",fg:"#FBF1E2"},{n:"Laranja",bg:"#A9603C",bg2:"#964F10",fg:"#FFF6EE"},{n:"Mostarda",bg:"#D9A02B",bg2:"#B98417",fg:"#3A2A22"},{n:"Creme",bg:"#F6EDE4",bg2:"#EADBCB",fg:"#5A3A28"}];
+var st={w:1080,h:1350,c:0},cv=document.getElementById("cv"),x=cv.getContext("2d");
+var sel=document.getElementById("fr"),tx=document.getElementById("tx"),lg=document.getElementById("lg");
+F.forEach(function(f,i){var o=document.createElement("option");o.value=i;o.textContent=f[0];sel.appendChild(o)});
+var cs=document.getElementById("cores");
+CORES.forEach(function(c,i){var d=document.createElement("div");d.className="cor"+(i?"":" on");d.style.background=c.bg;d.title=c.n;d.onclick=function(){st.c=i;Array.prototype.forEach.call(cs.children,function(e,k){e.className="cor"+(k===i?" on":"")});draw()};cs.appendChild(d)});
+function quebra(t,max){var p=t.split(/\s+/),l=[],c="";p.forEach(function(w){var n=c?c+" "+w:w;if(x.measureText(n).width>max&&c){l.push(c);c=w}else c=n});if(c)l.push(c);return l}
+function draw(){
+ var W=st.w,H=st.h,C=CORES[st.c];cv.width=W;cv.height=H;
+ var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,C.bg);g.addColorStop(1,C.bg2);x.fillStyle=g;x.fillRect(0,0,W,H);
+ x.strokeStyle=C.fg;x.globalAlpha=.35;x.lineWidth=3;x.strokeRect(50,50,W-100,H-100);x.globalAlpha=1;
+ x.fillStyle=C.fg;x.textAlign="center";x.textBaseline="alphabetic";
+ x.font="italic 40px Georgia,serif";x.fillText("Voltar para Si",W/2,150);
+ var t=(tx.value.trim()||F[sel.value][0]),fs=st.h>1500?96:92,L;
+ while(fs>44){x.font="italic 400 "+fs+"px Georgia,serif";L=quebra(t,W-220);if(L.length*fs*1.25<H*0.55)break;fs-=4}
+ var lh=fs*1.25,y=H/2-(L.length*lh)/2+fs*0.85;
+ L.forEach(function(s,i){x.fillText(s,W/2,y+i*lh)});
+ x.globalAlpha=.5;x.fillRect(W/2-60,H-210,120,3);x.globalAlpha=1;
+ x.font="600 40px system-ui,sans-serif";x.fillText(HANDLE,W/2,H-140);
+ x.font="italic 32px Georgia,serif";x.globalAlpha=.8;x.fillText("Suzana Rapassi · Psicóloga",W/2,H-95);x.globalAlpha=1;
+ var leg=tx.value.trim()?"Escreva aqui o que você quer comentar sobre a frase.":F[sel.value][1];
+ lg.textContent=leg+"\n\n"+CTA+"\n\n"+TAGS;
+}
+function fm(w,h,id){st.w=w;st.h=h;document.getElementById("fp").className=id==="p"?"on":"";document.getElementById("fs").className=id==="s"?"on":"";draw()}
+document.getElementById("fp").onclick=function(){fm(1080,1350,"p")};
+document.getElementById("fs").onclick=function(){fm(1080,1920,"s")};
+sel.onchange=function(){tx.value="";draw()};tx.oninput=draw;
+function blob(cb){cv.toBlob(cb,"image/png")}
+document.getElementById("bx").onclick=function(){blob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="post-suzana.png";document.body.appendChild(a);a.click();a.remove()})};
+document.getElementById("sh").onclick=function(){blob(function(b){var f=new File([b],"post-suzana.png",{type:"image/png"});if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],text:lg.textContent}).catch(function(){});else document.getElementById("bx").click()})};
+document.getElementById("cp").onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(lg.textContent):Promise.reject()).then(function(){b.textContent="Copiado!"},function(){b.textContent="Selecione e copie o texto acima"});setTimeout(function(){b.textContent="Copiar a legenda"},2000)};
+draw();})();</script></body></html>

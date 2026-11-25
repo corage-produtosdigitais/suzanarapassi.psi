@@ -1,0 +1,180 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><meta name="theme-color" content="#5A3A28"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Suzana Rapassi"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IAsmin · Central de conteúdo · Suzana Rapassi</title>
+<style>.orna{display:flex;justify-content:center;align-items:center;gap:8px;margin:6px 0 10px}.orna svg{display:block}:root{--c:#A9603C;--c2:#F7E6CF;--bg:#FBF6EE;--ink:#3A2A22;--soft:#7A6A60;--line:#E8DAC8;--deep:#5A3A28}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:600px;margin:0 auto;padding:22px 18px 40px;min-height:100vh;display:flex;flex-direction:column}
+h1{font:italic 400 30px/1.2 Georgia,serif;margin:10px 0 12px;color:var(--deep)}
+p{margin:0 0 14px}.sub{color:var(--soft)}
+.top{font:italic 17px Georgia,serif;color:var(--deep);text-align:center;margin:0 0 6px}
+.back{display:inline-block;color:var(--soft);font-size:17px;padding:8px 0;text-decoration:none}
+.btn{display:block;width:100%;min-height:56px;border-radius:16px;border:0;background:var(--c);color:#fff;font-weight:500;font-size:18px;font-family:inherit;cursor:pointer;margin-top:10px;text-align:center;text-decoration:none;padding:14px}
+.btn.sec{background:#fff;color:var(--c);border:1.5px solid var(--c)}
+select,input{width:100%;font:inherit;font-size:19px;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);margin:0 0 12px}
+label{display:block;font-weight:500;margin:0 0 6px}
+.acc{margin:0 0 12px}
+.acc>button{width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;font:700 20px/1.3 Georgia,serif;color:var(--deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.acc>button span{font:700 26px system-ui;color:var(--c);flex:none}
+.acc.open>button{border-color:var(--c);background:var(--c2)}
+.panel{display:none;padding:14px 4px 4px}
+.acc.open .panel{display:block}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}
+.tabs button{min-height:52px;border-radius:12px;border:2px solid var(--line);background:#fff;color:var(--ink);font:700 16px system-ui,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--c);border-color:var(--c);color:#fff}
+.dia{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin:0 0 10px}
+.dia.hoje{border-color:var(--deep)}
+.dia small{display:block;color:var(--soft);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.dia b{color:var(--deep)}
+.dia .btn{min-height:46px;font-size:17px;margin-top:8px;padding:10px}
+.out{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;white-space:pre-wrap;font-size:17px;line-height:1.55}
+.card{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin:0 0 10px}
+.card b{color:var(--deep)}b,strong{font-weight:500}
+.card ul{margin:6px 0 0;padding-left:20px}
+.tag{display:inline-block;background:var(--c2);color:var(--c);border-radius:99px;padding:4px 12px;font-size:15px;font-weight:700;margin:0 6px 6px 0}
+.aviso{font-size:15px;color:var(--soft);margin-top:14px}
+footer{margin-top:auto;padding-top:24px;text-align:center;font-size:15px;color:var(--soft)}</style></head><body><script src="gate.js"></script><main>
+<a class="back" href="estudio.html">← Voltar ao estúdio</a>
+<p class="top">IAsmin · social media da Dra. Suzana</p>
+<h1>Oi, eu sou a IAsmin</h1>
+<p class="sub">Sou a sua social media. Organizo o calendário, os roteiros e as ideias de post. Toque numa caixa para abrir.</p>
+
+<div class="acc open" id="a1"><button type="button"><b>Calendário editorial</b><span>−</span></button><div class="panel">
+ <p class="sub">Escolha a semana. Toque em "Criar roteiro" no dia que quiser.</p>
+ <div class="tabs" id="sem"></div>
+ <p id="semNome" style="font-weight:700;color:var(--deep)"></p>
+ <div id="dias"></div>
+ <button class="btn sec" id="cpSem" type="button">Copiar a semana</button>
+</div></div>
+
+<div class="acc" id="a2"><button type="button"><b>Criar roteiro</b><span>+</span></button><div class="panel">
+ <label for="fm">Formato</label><select id="fm"></select>
+ <label for="tm">Assunto</label><select id="tm"></select>
+ <label for="tl">Ou escreva o seu assunto</label><input id="tl" type="text" placeholder="Ex.: como lidar com a cobrança">
+ <label for="ob">Objetivo</label><select id="ob"></select>
+ <button class="btn" id="gerar" type="button">Montar o roteiro</button>
+ <div id="saida" style="display:none">
+  <div class="out" id="txt"></div>
+  <button class="btn" id="cp" type="button">Copiar o roteiro</button>
+  <button class="btn sec" id="troca" type="button">Trocar o gancho</button>
+  <button class="btn sec" id="cia" type="button">Copiar comando para a minha IA</button>
+  <p class="aviso">O comando funciona no Gemini, no Claude ou no ChatGPT (conta grátis). Cole lá, e a IA escreve o texto completo no tom da Dra. Suzana. O que for orientação técnica, ela revisa antes de postar.</p>
+ </div>
+</div></div>
+
+<div class="acc" id="a3"><button type="button"><b>Tipos de post</b><span>+</span></button><div class="panel" id="tipos"></div></div>
+
+<div class="acc" id="a4"><button type="button"><b>Chamadas e hashtags</b><span>+</span></button><div class="panel">
+ <div class="card"><b>Frases para fechar o post</b><ul id="ctas"></ul></div>
+ <div id="hts"></div>
+</div></div>
+
+<div class="acc" id="a5"><button type="button"><b>Cuidados ao publicar</b><span>+</span></button><div class="panel">
+ <div class="card"><ul>
+  <li>Não prometa cura, resultado nem prazo.</li>
+  <li>Não publique depoimento de paciente, nem história que permita reconhecer alguém.</li>
+  <li>Não faça diagnóstico nem avaliação de pessoas pelas redes.</li>
+  <li>Evite frases sensacionalistas e comparações.</li>
+  <li>Deixe o nome e o CRP visíveis no perfil.</li>
+ </ul></div>
+ <p class="aviso">As regras de publicidade do Conselho Federal de Psicologia (CFP) são rigorosas. Confira a resolução vigente e, na dúvida, pergunte ao CRP da sua região antes de divulgar.</p>
+</div></div>
+
+<footer>IAsmin, criada por Eve, imagem e marca<br>Suzana Rapassi · Psicóloga e Neuropsicóloga</footer>
+</main>
+<script>
+(function(){
+var NUTRI="Suzana Rapassi",ARROBA="@psi.suzanarapassi";
+var FM={reels:"Reels (vídeo curto)",carrossel:"Carrossel",story:"Stories em sequência",dica:"Post de dica",mito:"Mito e verdade",depo:"Post de reflexão",bast:"Bastidores de estudo",convite:"Convite para agendar",longo:"Vídeo longo"};
+var OB={atrair:"Atrair novas pessoas",educar:"Educar",conectar:"Conectar",convidar:"Convidar para agendar"};
+var CTA={atrair:"Salve e envie para quem precisa ver isso.",educar:"Salve este conteúdo para consultar depois.",conectar:"Me conta nos comentários: isso acontece com você?",convidar:"Chame no WhatsApp pelo link da bio e vamos conversar."};
+var GAN={
+ atrair:["O que ninguém te conta sobre {t}.","{T}: o jeito leve que funciona na vida real.","Pare de complicar {t}."],
+ educar:["3 coisas que você precisa saber sobre {t}.","{T} em 30 segundos.","Vou te explicar {t} de um jeito simples."],
+ conectar:["Hoje eu quero conversar com você sobre {t}.","Vamos conversar sobre {t}?","Hoje eu falo de coração aberto sobre {t}."],
+ convidar:["Quer ajuda com {t}? Eu posso te acompanhar.","Vem conversar comigo sobre {t}.","Se {t} é o seu desafio, vamos conversar."]};
+var TEMAS=["ansiedade no dia a dia","cobrança e perfeccionismo","sobrecarga da mulher","limites e dizer não","autoestima","descanso sem culpa","relações e vínculos","luto e perdas","rotina corrida","atenção e foco","memória e esquecimentos","fases da vida da mulher","como é a primeira sessão","avaliação neuropsicológica","a mentoria Livre, Leve e Plena"];
+var SEM=[
+ {n:"Cuidar de si",d:[["Seg","carrossel","descanso sem culpa","educar"],["Ter","reels","ansiedade no dia a dia","atrair"],["Qua","mito","autoestima","educar"],["Qui","bast","rotina corrida","conectar"],["Sex","reels","limites e dizer não","atrair"],["Sáb","story","sobrecarga da mulher","conectar"],["Dom","story","descanso sem culpa","conectar"]]},
+ {n:"Emoções e relações",d:[["Seg","carrossel","relações e vínculos","educar"],["Ter","reels","cobrança e perfeccionismo","atrair"],["Qua","mito","ansiedade no dia a dia","educar"],["Qui","depo","autoestima","conectar"],["Sex","reels","limites e dizer não","atrair"],["Sáb","story","luto e perdas","conectar"],["Dom","story","rotina corrida","conectar"]]},
+ {n:"Mente e atenção",d:[["Seg","carrossel","atenção e foco","educar"],["Ter","reels","memória e esquecimentos","atrair"],["Qua","mito","atenção e foco","educar"],["Qui","bast","avaliação neuropsicológica","conectar"],["Sex","longo","fases da vida da mulher","educar"],["Sáb","story","sobrecarga da mulher","conectar"],["Dom","story","descanso sem culpa","conectar"]]},
+ {n:"Atendimento e convite",d:[["Seg","carrossel","como é a primeira sessão","educar"],["Ter","reels","avaliação neuropsicológica","atrair"],["Qua","depo","fases da vida da mulher","conectar"],["Qui","bast","a mentoria Livre, Leve e Plena","conectar"],["Sex","convite","como é a primeira sessão","convidar"],["Sáb","story","rotina corrida","conectar"],["Dom","story","autoestima","conectar"]]}];
+var TIPOS=[
+ ["Reels","Alcança gente nova. É o melhor para crescer.",["Gancho nos 3 primeiros segundos","Uma ideia só, em 30 a 45 segundos","Legenda escrita na tela"]],
+ ["Carrossel","Ensina e é salvo. Ótimo para dicas.",["Capa com tema claro, sem prometer resultado","Um passo por slide","Último slide chama para a ação"]],
+ ["Post de dica","Dica rápida em uma imagem só. Use o Estúdio.",["Frase curta e forte","Legenda explica em 3 linhas","Feche com uma chamada"]],
+ ["Mito e verdade","Gera comentários e compartilhamentos.",["Mito em um slide, verdade no seguinte","Explique em linguagem simples","Convide a comentar"]],
+ ["Reflexão","Uma frase para pensar. Gera conexão, sem expor ninguém.",["Frase curta, em primeira pessoa ou convite","Legenda acolhedora em 3 linhas","Sem história de paciente"]],
+ ["Bastidores de estudo","Aproxima. Mostra quem é a Dra. Suzana.",["Seus estudos e leituras","Sua rotina de preparo","Nunca mostre pacientes nem dados"]],
+ ["Stories","Conversa diária com quem já segue.",["Enquete ou caixinha de pergunta","3 a 5 stories por dia","Termine com um convite"]],
+ ["Convite","Chama para agendar um atendimento ou a mentoria.",["Fale da dor, depois do acolhimento","Sem prometer resultado","Link do WhatsApp na bio"]],
+ ["Vídeo longo ou Live","Aprofunda. Bom para YouTube e lives.",["Um tema por vídeo","Abertura, 3 blocos, convite","Reaproveite em cortes de Reels"]]];
+var HTS=[["Bem-estar emocional","#psicologia #saudemental #bemestar #autocuidado #psicologaonline #neuropsicologia"],["Mulheres e rotina","#mulheres #sobrecarga #descansosemculpa #limites #autoestima #vidaleve"],["Atenção e mente","#neuropsicologia #atencao #foco #memoria #avaliacaoneuropsicologica"]];
+var ctrlGancho=0,ult=null;
+
+function $(i){return document.getElementById(i)}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function copiar(txt,btn,rotulo){function ok(){var o=btn.textContent;btn.textContent="Copiado!";setTimeout(function(){btn.textContent=o},1800)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){prompt("Copie o texto:",txt)})}else{prompt("Copie o texto:",txt)}}
+
+function monta(f,t,o,gi){
+ var T=cap(t),g=GAN[o][gi%3].replace(/\{t\}/g,t).replace(/\{T\}/g,T),cta=CTA[o],L="\n";
+ var cab=FM[f].toUpperCase()+L+"Assunto: "+t+L+"Objetivo: "+OB[o]+L+L;
+ switch(f){
+ case"reels":return cab+"GANCHO (0 a 3s)"+L+"“"+g+"”"+L+L+"CENA 1 (3 a 10s) · O problema"+L+"Mostre uma situação do dia a dia ligada a "+t+". [descreva a cena]"+L+L+"CENA 2 (10 a 30s) · Sua orientação"+L+"1) [dica simples]"+L+"2) [dica simples]"+L+"3) [dica simples]"+L+L+"FECHAMENTO (30 a 40s)"+L+"“"+cta+"”"+L+L+"DICAS DE GRAVAÇÃO"+L+"- Luz de frente, celular na vertical."+L+"- Fale olhando para a câmera."+L+"- Escreva o gancho na tela nos primeiros segundos.";
+ case"carrossel":return cab+"SLIDE 1 · Capa"+L+T.toUpperCase()+": o jeito leve"+L+L+"SLIDE 2 · O problema"+L+"[o que as pessoas costumam sentir ou errar sobre "+t+"]"+L+L+"SLIDES 3 a 6 · Um passo por slide"+L+"3) [passo 1]"+L+"4) [passo 2]"+L+"5) [passo 3]"+L+"6) [passo 4]"+L+L+"SLIDE 7 · Resumo"+L+"[a ideia principal em uma frase]"+L+L+"SLIDE 8 · Convite"+L+cta+L+L+"LEGENDA"+L+g+" [2 linhas explicando]. "+cta;
+ case"story":return cab+"STORY 1 · Enquete"+L+"“Você já passou por isso com "+t+"?” (Sim / Mais ou menos)"+L+L+"STORY 2 · Conteúdo"+L+g+L+"[sua orientação em uma frase]"+L+L+"STORY 3 · Conteúdo"+L+"[segunda dica, com texto curto]"+L+L+"STORY 4 · Caixinha de pergunta"+L+"“Qual a sua dúvida sobre "+t+"?”"+L+L+"STORY 5 · Convite"+L+cta;
+ case"dica":return cab+"IMAGEM (use o Estúdio)"+L+"Frase: [dica curta sobre "+t+"]"+L+L+"LEGENDA"+L+g+L+"1) [ponto 1]"+L+"2) [ponto 2]"+L+"3) [ponto 3]"+L+cta;
+ case"mito":return cab+"SLIDE 1 · Capa"+L+"MITO OU VERDADE? "+T+L+L+"SLIDE 2 · O mito"+L+"“[o que dizem por aí sobre "+t+"]”"+L+L+"SLIDE 3 · A verdade"+L+"[explique em linguagem simples]"+L+L+"SLIDE 4 · O que fazer"+L+"[uma orientação prática]"+L+L+"SLIDE 5 · Convite"+L+cta;
+ case"depo":return cab+"IMAGEM (use o Estúdio)"+L+"Frase de reflexão: “[uma frase acolhedora sobre "+t+"]”"+L+L+"LEGENDA"+L+g+L+"[2 linhas acolhendo, sem citar nenhuma paciente]"+L+cta+L+L+"CUIDADO"+L+"Não use histórias nem falas de pacientes.";
+ case"bast":return cab+"IDEIA"+L+"Mostre um momento real da sua rotina ligado a "+t+"."+L+L+"ROTEIRO (Reels ou Stories)"+L+"1) Abertura: “"+g+"”"+L+"2) Mostre: [bastidor permitido: preparo, estudo, ambiente]"+L+"3) Conte: [por que isso importa para você]"+L+"4) Feche: "+cta;
+ case"convite":return cab+"ROTEIRO (Reels de 30s ou post)"+L+"1) Gancho: “"+g+"”"+L+"2) Dor: [o que a pessoa sente hoje]"+L+"3) Como é o atendimento: [online ou presencial, acolhimento, sigilo]"+L+"4) Convite: “"+cta+"”"+L+L+"CUIDADO"+L+"Não prometa resultado nem prazo.";
+ case"longo":return cab+"ROTEIRO (5 a 10 minutos)"+L+"ABERTURA (30s): “"+g+"” + quem é você"+L+"BLOCO 1: [o que é "+t+"]"+L+"BLOCO 2: [erros mais comuns]"+L+"BLOCO 3: [passo a passo simples]"+L+"RESUMO: [3 ideias para lembrar]"+L+"CONVITE: "+cta+L+L+"APROVEITE: corte 3 trechos em Reels.";
+ }}
+
+function prompt_ia(f,t,o){
+ return "Você é a IAsmin, a social media da psicóloga e neuropsicóloga "+NUTRI+" ("+ARROBA+"). Tom: leve, acolhedor, com ciência e cuidado, em português do Brasil.\nRegras: não prometer cura, resultado nem prazo; não usar depoimento nem história de paciente; não fazer diagnóstico; não dar orientação clínica individual.\nCrie: "+FM[f]+".\nAssunto: "+t+".\nObjetivo: "+OB[o]+".\nEntregue só o texto pronto, com legenda curta no final e hashtags com # na frente. Coloque entre colchetes o que for orientação técnica, para a Dra. Suzana revisar.";
+}
+
+function abre(id){["a1","a2","a3","a4","a5"].forEach(function(x){var e=$(x),on=x===id&&!e.classList.contains("open");e.classList.toggle("open",on);e.querySelector("button span").textContent=on?"−":"+"})}
+["a1","a2","a3","a4","a5"].forEach(function(x){$(x).querySelector("button").onclick=function(){abre(x)}});
+
+// selects
+function opts(sel,obj,first){var h=first?'<option value="">'+first+'</option>':"";Object.keys(obj).forEach(function(k){h+='<option value="'+k+'">'+esc(obj[k])+'</option>'});sel.innerHTML=h}
+opts($("fm"),FM);opts($("ob"),OB);
+$("tm").innerHTML='<option value="">Escolha o assunto</option>'+TEMAS.map(function(t){return'<option value="'+esc(t)+'">'+esc(cap(t))+'</option>'}).join("");
+
+function assunto(){var l=$("tl").value.trim();return l||$("tm").value}
+function gera(novo){
+ var t=assunto();if(!t){alert("Escolha ou escreva o assunto.");return}
+ if(novo)ctrlGancho=0;
+ var f=$("fm").value,o=$("ob").value;ult={f:f,t:t,o:o};
+ $("txt").textContent=monta(f,t,o,ctrlGancho);$("saida").style.display="block";
+}
+$("gerar").onclick=function(){gera(true)};
+$("troca").onclick=function(){ctrlGancho++;gera(false)};
+$("cp").onclick=function(){copiar($("txt").textContent,this)};
+$("cia").onclick=function(){if(!ult)return;copiar(prompt_ia(ult.f,ult.t,ult.o),this)};
+
+// calendário
+var semSel=0,hoje=(new Date().getDay()+6)%7;
+function pintaSem(){
+ var t="";for(var i=0;i<4;i++)t+='<button type="button" data-i="'+i+'" class="'+(i===semSel?"on":"")+'">Sem '+(i+1)+'</button>';$("sem").innerHTML=t;
+ var s=SEM[semSel];$("semNome").textContent="Semana "+(semSel+1)+": "+s.n;
+ var h="";s.d.forEach(function(d,k){h+='<div class="dia'+(k===hoje?" hoje":"")+'"><small>'+d[0]+(k===hoje?" · hoje":"")+' · '+esc(FM[d[1]])+'</small><b>'+esc(cap(d[2]))+'</b><br><span class="sub" style="font-size:16px">Objetivo: '+esc(OB[d[3]])+'</span><button class="btn sec" type="button" data-k="'+k+'">Criar roteiro</button></div>'});
+ $("dias").innerHTML=h;
+}
+$("sem").onclick=function(e){var b=e.target.closest("button");if(!b)return;semSel=+b.getAttribute("data-i");pintaSem()};
+$("dias").onclick=function(e){var b=e.target.closest("button");if(!b)return;var d=SEM[semSel].d[+b.getAttribute("data-k")];
+ $("fm").value=d[1];$("tm").value=d[2];$("tl").value="";$("ob").value=d[3];abre("a2");gera(true);$("a2").scrollIntoView({behavior:"smooth"})};
+$("cpSem").onclick=function(){var s=SEM[semSel],t="Semana "+(semSel+1)+": "+s.n+"\n";s.d.forEach(function(d){t+="\n"+d[0]+" · "+FM[d[1]]+" · "+cap(d[2])});copiar(t,this)};
+pintaSem();
+
+// tipos
+$("tipos").innerHTML=TIPOS.map(function(t){return'<div class="card"><b>'+esc(t[0])+'</b><br>'+esc(t[1])+'<ul>'+t[2].map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ul></div>'}).join("");
+
+// ctas e hashtags
+$("ctas").innerHTML=Object.keys(CTA).map(function(k){return"<li>"+esc(CTA[k])+"</li>"}).join("");
+$("hts").innerHTML=HTS.map(function(h,i){return'<div class="card"><b>'+esc(h[0])+'</b><p style="margin:6px 0 8px;font-size:17px">'+esc(h[1])+'</p><button class="btn sec" type="button" data-i="'+i+'" style="min-height:46px;font-size:17px;margin:0">Copiar</button></div>'}).join("");
+$("hts").onclick=function(e){var b=e.target.closest("button");if(!b)return;copiar(HTS[+b.getAttribute("data-i")][1],b)};
+})();
+</script></body></html>
